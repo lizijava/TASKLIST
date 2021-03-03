@@ -1,0 +1,37 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="header">
+ <!--添加-->
+<image class="plus" src="../../assets/plus.png" bindtap="addTodoHandle"></image>
+  <input class="now-todo" value="{{ input }}" placeholder="添加任务" bindinput="inputChangeHandle" />
+  </view>
+  <!--展示-->
+<block wx:if="{{todos.length}}">
+  <view class="todos" >
+    <!--完成-->
+    <view class="item {{ item.completed ? 'completed' : '' }}" wx:for="{{todos}}" wx:key="key"  bindtap="toggleTodoHandle" data-index="{{index}}"> <!--设置新属性 利用冒泡-->
+      <icon class="checkbox" type="{{item.completed ? 'success' : 'circle'}}"/>
+    <text class="name">{{item.name}}</text> 
+    <!--删除-->
+    <icon class="remove" type="clear" size="16" catchtap="removeTodoHandle" data-index="{{index}}"/>
+  </view>
+  </view>
+  <view class="footer">
+    <!--全选按钮-->
+    <text class="btn" bindtap="toggleAllHandle">全选</text>
+    <!--数目统计-->
+    <text>还有{{leftCount}}项没完成</text>
+    <!--删除已完成-->
+    <text class="btn" bindtap="clearCompletedHandle">清空完成</text>
+  </view>
+</block>
+<block wx:else>
+  <view class="empty">
+    <text class="title">yeah!</text>
+    <text class="content">没有任务啦！</text>
+
+  </view>
+</block>
+ 
+
+</view>

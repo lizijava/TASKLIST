@@ -1,0 +1,31 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#00b26a",
+    "navigationBarTitleText": "立即行动！",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#00b26a",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "任务",
+        "iconPath": "assets/todos.png",
+        "selectedIconPath": "assets/todos-active.png"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "日志",
+        "iconPath": "assets/logs.png",
+        "selectedIconPath": "assets/logs-active.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap57.json"
+}
