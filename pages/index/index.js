@@ -67,7 +67,7 @@ Page({
   removeTodoHandle:function(e) {
     var index = e.currentTarget.dataset.index
     var todos = this.data.todos
-    var remove = todos.splice(index, 1)
+    var remove = todos.splice(index, 1)[0]
     var logs = this.data.logs
     logs.push({
       timestamp:new Date(),
